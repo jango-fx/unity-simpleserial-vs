@@ -15,9 +15,14 @@
   "version": "0.0.1",
   "samples": [
     {
-        "displayName": "Serial to Console",
-        "description": "Simple script printing all incoming serial data to the console.\nConfigure the serial port in the SerialConnection asset. Add the SimpleSerialVS prefab to the scene. And hit Play.",
+        "displayName": "Serial Receive",
+        "description": "Simple script, printing all incoming serial data to the console.\nConfigure the serial port in the `SerialConnection` asset. Add the `SimpleSerialVS` prefab to the scene. And hit Play.",
         "path": "Samples~/SimpleSerialVS Example"
-    }
+    },
+    {
+      "displayName": "Serial Send",
+      "description": "Simple script, sending undulating values to serial.\nConfigure the serial port in the `SerialConnection` asset. Add the `SimpleSerialVS - Send` prefab to the scene. And hit Play.",
+      "path": "Samples~/SimpleSerialVS Example"
+  }
   ]
 }
