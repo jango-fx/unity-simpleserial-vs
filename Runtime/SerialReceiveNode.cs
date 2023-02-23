@@ -34,17 +34,17 @@ namespace ƒx.SimpleSerial
             return new EventHook(SerialReceiveNode.SerialEvent);
         }
 
-        // override public void StartListening(GraphStack stack)
-        // {
-        //     base.StartListening(stack);
+        override public void StartListening(GraphStack stack)
+        {
+            base.StartListening(stack);
 
-        //     GraphReference reference = stack.AsReference();
-        //     using var flow = Flow.New(reference);
-        //     serialConnection = flow.GetValue<SerialConnection>(Connection);
+            GraphReference reference = stack.AsReference();
+            using var flow = Flow.New(reference);
+            serialConnection = flow.GetValue<SerialConnection>(Connection);
 
-        //     serialConnection.callbackHandler -= OnReceive;
-        //     serialConnection.callbackHandler += OnReceive;
-        // }
+            serialConnection.callbackHandler -= OnReceive;
+            serialConnection.callbackHandler += OnReceive;
+        }
 
         void PortsChanged(Flow flow)
         {
