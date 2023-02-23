@@ -24,7 +24,6 @@ namespace ƒx.SimpleSerial
             OutputData = ValueOutput<string>(nameof(OutputData), GetSerialData);
         }
 
-
         string GetSerialData(Flow flow)
         {
             return serialData;
@@ -35,14 +34,21 @@ namespace ƒx.SimpleSerial
             return new EventHook(SerialReceiveNode.SerialEvent);
         }
 
-        override public void StartListening(GraphStack stack)
+        // override public void StartListening(GraphStack stack)
+        // {
+        //     base.StartListening(stack);
+
+        //     GraphReference reference = stack.AsReference();
+        //     using var flow = Flow.New(reference);
+        //     serialConnection = flow.GetValue<SerialConnection>(Connection);
+
+        //     serialConnection.callbackHandler -= OnReceive;
+        //     serialConnection.callbackHandler += OnReceive;
+        // }
+
+        void PortsChanged(Flow flow)
         {
-            base.StartListening(stack);
-
-            GraphReference reference = stack.AsReference();
-            using var flow = Flow.New(reference);
             serialConnection = flow.GetValue<SerialConnection>(Connection);
-
             serialConnection.callbackHandler -= OnReceive;
             serialConnection.callbackHandler += OnReceive;
         }
