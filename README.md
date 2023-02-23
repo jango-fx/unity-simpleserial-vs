@@ -3,4 +3,4 @@
 basic serial communication for Unity's VisualScripting.
 
 ## Dependencies
-- SimpleSerial package
+- [SimpleSerial](https://github.com/jango-fx/unity-simpleserial) package
