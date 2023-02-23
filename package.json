@@ -1,0 +1,23 @@
+{
+  "author": "Felix Groll",
+  "dependencies": {
+    "com.unity.visualscripting": "1.7.0",
+    "io.github.jango-fx.simpleserial": "0.0.1"
+  },
+  "description": "SimpleSerial extension for Visual Scripting",
+  "displayName": "SimpleSerialVS",
+  "keywords": [ "unity", "serial", "arduino" ],
+  "license": "",
+  "name": "io.github.jango-fx.simpleserial.visualscripting",
+  "repository": "",
+  "unity": "2021.3",
+  "unityRelease": "15f1",
+  "version": "0.0.1",
+  "samples": [
+    {
+        "displayName": "Serial to Console",
+        "description": "Simple script printing all incoming serial data to the console.\nConfigure the serial port in the SerialConnection asset. Add the SimpleSerialVS prefab to the scene. And hit Play.",
+        "path": "Samples~/SimpleSerialVS Example"
+    }
+  ]
+}
