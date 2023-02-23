@@ -28,7 +28,9 @@ namespace ƒx.SimpleSerial
 
         ControlOutput UpdateNode(Flow flow)
         {
-            serialConnection.Send(flow.GetValue<string>(Message));
+            string msg = flow.GetValue<string>(Message);
+            serialConnection = flow.GetValue<SerialConnection>(Connection);
+            serialConnection.SendLine(msg);
             return OutputTrigger;
         }
 
@@ -36,5 +38,6 @@ namespace ƒx.SimpleSerial
         {
             serialConnection = flow.GetValue<SerialConnection>(Connection);
         }
+
     }
 }
