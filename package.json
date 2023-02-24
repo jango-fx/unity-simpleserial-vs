@@ -4,7 +4,7 @@
     "com.unity.visualscripting": "1.7.0",
     "io.github.jango-fx.simpleserial": "0.0.1"
   },
-  "description": "SimpleSerial extension for Visual Scripting",
+  "description": "Visual Scripting extension for the SimpleSerial package",
   "displayName": "SimpleSerialVS",
   "keywords": [
     "unity",
