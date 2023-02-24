@@ -6,7 +6,11 @@
   },
   "description": "SimpleSerial extension for Visual Scripting",
   "displayName": "SimpleSerialVS",
-  "keywords": [ "unity", "serial", "arduino" ],
+  "keywords": [
+    "unity",
+    "serial",
+    "arduino"
+  ],
   "license": "",
   "name": "io.github.jango-fx.simpleserial.visualscripting",
   "repository": "",
@@ -15,14 +19,19 @@
   "version": "0.0.1",
   "samples": [
     {
-        "displayName": "Serial Receive",
-        "description": "Simple script, printing all incoming serial data to the console.\nConfigure the serial port in the `SerialConnection` asset. Add the `SimpleSerialVS` prefab to the scene. And hit Play.",
-        "path": "Samples~/SimpleSerialVS Example"
+      "displayName": "Serial Receive",
+      "description": "Simple script, printing all incoming serial data to the console.\nConfigure the serial port in the `SerialConnection` asset. Add the `SimpleSerialVS` prefab to the scene. And hit Play.",
+      "path": "Samples~/SimpleSerialVS-ReceiveSerial"
     },
     {
       "displayName": "Serial Send",
       "description": "Simple script, sending undulating values to serial.\nConfigure the serial port in the `SerialConnection` asset. Add the `SimpleSerialVS - Send` prefab to the scene. And hit Play.",
-      "path": "Samples~/SimpleSerialVS Example"
-  }
+      "path": "Samples~/SimpleSerialVS-SendSerial"
+    },
+    {
+      "displayName": "Arduino Demo",
+      "description": "Simple Arduino sketch sending a string every 500ms over the serial interface and at the same time interprets incoming values as integer (between 0 and 255) to drive an LED at pin 13 via PWM.",
+      "path": "Samples~/SimpleSerial-ArduinoInOut"
+    }
   ]
 }
