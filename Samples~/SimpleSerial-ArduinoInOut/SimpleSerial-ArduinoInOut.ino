@@ -5,6 +5,8 @@ bool stringComplete = false;  // whether the string is complete
 
 long lastTime;                // save time for stop watch
 
+int sensorValue;
+
 void setup() {
   Serial.begin(115200);       // initialize serial:
   inputString.reserve(200);   // reserve 200 bytes for the inputString
@@ -13,8 +15,15 @@ void setup() {
 
 
 void loop() {
+  sensorValue = analogRead(A5);
   if (stringComplete) {                     // when a newline arrives…
-    Serial.println(inputString);            // print the string
+    // Serial.println(">"+inputString+"<");            // print the string
+    if(inputString == "!\n")
+    {
+      digitalWrite(led, HIGH);
+      delay(1000);
+      digitalWrite(led, LOW);
+    }
     analogWrite(led, inputString.toInt());  // parse it as integer and use it as PWM value for the LED (assuming it's between 0 and 255)
     
     inputString = "";                       // reset the string
@@ -24,7 +33,7 @@ void loop() {
   long currentTime = millis();
   long timePassed = currentTime-lastTime;   // compute stop watch
   if(timePassed > 500){                     // if more than 0.5seconds have passed since we last took time…
-    Serial.println("Hello?");               // print to Serial
+    //Serial.println(String(sensorValue);   // print to Serial
     lastTime = currentTime;                 // and reset the stop watch
   }
 }
@@ -37,6 +46,7 @@ void loop() {
 */
 void serialEvent() {
   while (Serial.available()) {
+    digitalWrite(led, HIGH);
     // get the new byte:
     char inChar = (char)Serial.read();
     // add it to the inputString:
@@ -47,4 +57,5 @@ void serialEvent() {
       stringComplete = true;
     }
   }
+        digitalWrite(led, LOW);
 }
